@@ -447,9 +447,130 @@ input,select,textarea{font-size:1rem}
 .pose.wave img{animation:hop .6s cubic-bezier(.3,1.6,.5,1)}
 @keyframes hop{0%{transform:none}40%{transform:translateY(-30px) rotate(-6deg)}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.pose{transform:none;opacity:1}}
+/* ---------- round 5: punchy colour ---------- */
+:root{--sun:#FFC93C;--coral:#FF5D5D;--mint:#22C99A;--violet:#7B5CFF;--cyan:#22B8F0}
+#hero{position:relative}
+#hero .hero-grid{position:relative;z-index:1}
+.blobs{position:absolute;inset:0;pointer-events:none;z-index:0}
+.blobs i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;animation:float 14s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:420px;height:420px;background:var(--cyan);left:-120px;top:-80px}
+.blobs i:nth-child(2){width:360px;height:360px;background:var(--violet);right:8%;top:10%;animation-delay:-4s;opacity:.32}
+.blobs i:nth-child(3){width:260px;height:260px;background:var(--sun);left:42%;bottom:-60px;animation-delay:-8s;opacity:.38}
+.blobs i:nth-child(4){width:200px;height:200px;background:var(--coral);right:-40px;bottom:10%;animation-delay:-2s;opacity:.25}
+@keyframes float{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,40px) scale(1.15)}}
+.hero-copy h1 em{background:linear-gradient(transparent 62%,var(--sun) 62%,var(--sun) 92%,transparent 92%);padding:0 .08em}
+section>.wrap>.eyebrow{display:inline-block;padding:.35rem .75rem;border-radius:8px;color:#14142B;background:var(--sun);transform:rotate(-2deg);box-shadow:3px 3px 0 #14142B}
+#what>.wrap>.eyebrow{background:var(--coral);color:#fff}
+#how>.wrap>.eyebrow{background:var(--mint)}
+#trades>.wrap>.eyebrow{background:var(--violet);color:#fff}
+#pricing>.wrap>.eyebrow{background:var(--cyan)}
+#safety>.wrap>.eyebrow{background:var(--coral);color:#fff}
+#finale>.wrap>.eyebrow{background:var(--sun);color:#14142B!important}
+.btn{box-shadow:0 4px 0 rgba(10,30,90,.35)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--sun)}
+.btn.ghost:hover{box-shadow:5px 5px 0 var(--mint)}
+.trade:nth-child(6n+1) code{background:#FFF1C9;color:#8A5A00}
+.trade:nth-child(6n+2) code{background:#FFE0E0;color:#B3262B}
+.trade:nth-child(6n+3) code{background:#D6F7EC;color:#0B7A5A}
+.trade:nth-child(6n+4) code{background:#E7E1FF;color:#5136D9}
+.trade:nth-child(6n+5) code{background:#D7F1FC;color:#0A6E99}
+.trade:nth-child(6n+6) code{background:var(--sky);color:var(--blue)}
+.trade:hover{box-shadow:4px 4px 0 var(--sun)}
+.chapter:nth-child(1) time{color:var(--sun)}.chapter:nth-child(2) time{color:var(--mint)}.chapter:nth-child(3) time{color:#FF8A8A}
+.story{background:radial-gradient(700px 400px at 90% 0%,rgba(123,92,255,.45),transparent 70%),radial-gradient(600px 400px at 0% 100%,rgba(34,184,240,.35),transparent 70%),#0A2E7A}
+.track.worker{background:linear-gradient(135deg,#1450D2,#7B5CFF);border-color:transparent}
+.plan.feature{background:linear-gradient(140deg,#1450D2 0%,#4F3BE0 60%,#7B5CFF 100%);color:#fff;border-color:transparent}
+.plan.feature .eyebrow,.plan.feature .price small,.plan.feature ul{color:#E3E9FF}
+.plan.feature .btn{background:#fff;color:#1450D2;border-color:#fff}
+.tl-bar{background:linear-gradient(90deg,var(--mint) 0 50%,var(--sun) 50% 100%)}
+.tl-bar::after{background:var(--coral)}
+.safety{background:linear-gradient(160deg,var(--sky),color-mix(in srgb,var(--mint) 22%,var(--paper)))}
+.mark{box-shadow:2px 2px 0 rgba(0,0,0,.15)}
+#finale{background:radial-gradient(600px 380px at 15% 20%,rgba(34,184,240,.4),transparent 70%),radial-gradient(700px 420px at 85% 70%,rgba(123,92,255,.5),transparent 70%),#0A2E7A}
+.score{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--f-mono);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--sun);color:#14142B;padding:.35rem .7rem;border-radius:999px;box-shadow:2px 2px 0 #14142B}
+.score b{font-size:1rem}
+.score.pop{animation:scorepop .5s cubic-bezier(.3,1.8,.5,1)}
+@keyframes scorepop{0%{transform:scale(1)}40%{transform:scale(1.35) rotate(-6deg)}100%{transform:none}}
+@media (max-width:560px){.score{display:none}}
+.confetti{position:fixed;z-index:70;width:9px;height:14px;border-radius:2px;pointer-events:none;margin:-7px 0 0 -4px}
+.p-pause{border:1.5px dashed var(--line);background:transparent;color:var(--muted);border-radius:10px;padding:.5rem;font-weight:700;font-size:.9rem;margin-top:4px}
+.p-pause:hover{border-color:var(--blue);color:var(--blue)}
+/* ceiling pipe */
+#tpipe{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 64px);height:12px;z-index:31;pointer-events:none;background:linear-gradient(180deg,#6E819E,#E6EDF8 38%,#A5B3CA 62%,#5F7290)}
+#tpipe::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 220px,rgba(0,0,0,.22) 220px 222px,rgba(255,255,255,.35) 222px 234px,rgba(0,0,0,.22) 234px 236px)}
+#tjoint{position:fixed;top:calc(env(safe-area-inset-top,0px) + 59px);width:24px;height:22px;margin-left:-12px;border-radius:5px;z-index:31;pointer-events:none;background:linear-gradient(90deg,#55688A,#DCE5F2 40%,#55688A);display:none}
+#tjoint.leaking{display:block;animation:shake .14s linear infinite}
+#tjoint .drip i{position:absolute;left:8px;top:18px;width:9px;height:13px;border-radius:50% 50% 50% 50%/40% 40% 60% 60%;background:#4FA3FF;animation:drip 1s cubic-bezier(.5,0,1,1) infinite}
+@keyframes drip{0%{transform:translateY(0) scale(.4);opacity:1}15%{transform:translateY(4px) scale(1)}100%{transform:translateY(82vh) scale(1);opacity:.7}}
+/* ladder */
+.ladder{position:fixed;z-index:49;pointer-events:none;border-left:6px solid #B07D3A;border-right:6px solid #B07D3A;background:repeating-linear-gradient(180deg,transparent 0 22px,#D9A65C 22px 28px);transform:scaleY(0);transform-origin:50% 100%;transition:transform .4s cubic-bezier(.3,1.4,.5,1);filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))}
+.ladder.up{transform:none}
+.actor.climbing .flipper img{animation:climb .22s ease-in-out infinite alternate;transform-origin:50% 100%}
+@keyframes climb{from{transform:rotate(-4deg)}to{transform:rotate(4deg) translateY(-4px)}}
+/* blackout + lamp */
+#dark{position:fixed;inset:0;z-index:33;pointer-events:none;opacity:0;transition:opacity .6s;background:radial-gradient(circle 150px at var(--mx,50%) var(--my,50%),rgba(2,8,20,0) 0,rgba(2,8,20,.35) 110px,rgba(2,8,20,.95) 175px)}
+body.blackout #dark{opacity:1}
+.lamp{position:fixed;top:calc(env(safe-area-inset-top,0px) + 74px);width:64px;margin-left:-32px;z-index:36;transform-origin:50% 0;animation:sway 2.2s ease-in-out infinite alternate;pointer-events:none;transition:opacity .4s}
+.lamp.still{animation:none}.lamp.gone{opacity:0}
+.lamp .cord{display:block;width:3px;height:var(--len);margin:0 auto;background:#263042}
+.lamp .shade{display:block;width:64px;height:32px;border-radius:32px 32px 6px 6px;background:linear-gradient(#4F86FF,#123FA8)}
+.lamp .bulb{display:block;width:22px;height:22px;margin:-5px auto 0;border-radius:50%;background:#5A6372;transition:.3s}
+.lamp.on .bulb{background:#FFF6C2;box-shadow:0 0 34px 16px rgba(255,226,110,.85)}
+@keyframes sway{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+/* socket */
+.socket{position:fixed;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:14px;background:linear-gradient(145deg,#FFFFFF,#D7DFEC);border:3px solid #8FA0BC;z-index:34;pointer-events:none;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.socket .holes{width:30px;height:12px;background:radial-gradient(circle at 5px 6px,#263042 4px,transparent 5px),radial-gradient(circle at 25px 6px,#263042 4px,transparent 5px)}
+.socket .sparks i{position:absolute;left:50%;top:50%;width:4px;height:13px;margin-left:-2px;border-radius:2px;background:#FFE680;box-shadow:0 0 10px #FFD23F;opacity:0;animation:spark .5s linear infinite}
+.socket .smoke i{position:absolute;left:40%;top:-6px;width:18px;height:18px;border-radius:50%;background:rgba(80,90,110,.45);animation:smoke 1.6s ease-out infinite}
+.socket .smoke i:nth-child(2){left:55%;animation-delay:.5s}.socket .smoke i:nth-child(3){left:30%;animation-delay:1s}
+@keyframes smoke{from{transform:translateY(0) scale(.5);opacity:.8}to{transform:translateY(-70px) scale(2.2);opacity:0}}
+.socket.fixed{border-color:var(--mint)}.socket.fixed .sparks,.socket.fixed .smoke{display:none}
+body.buzz main{animation:buzz 2.4s steps(1) infinite}
+@keyframes buzz{0%,86%,100%{transform:none}88%{transform:translate(2px,-1px)}90%{transform:translate(-2px,1px)}92%{transform:translate(1px,2px)}94%{transform:translate(-1px,-2px)}}
+/* spider */
+.spider{position:fixed;top:calc(env(safe-area-inset-top,0px) + 74px);width:40px;margin-left:-20px;z-index:36;pointer-events:none;transition:transform .6s ease-in}
+.spider .thread{display:block;width:1.5px;height:var(--len);margin:0 auto;background:rgba(120,130,150,.8)}
+.spider svg{display:block;width:40px;height:40px;animation:bobspider 1.6s ease-in-out infinite alternate}
+@keyframes bobspider{from{transform:translateY(0)}to{transform:translateY(12px)}}
+.spider.flee{transform:translateY(-120vh)}
+/* cracks */
+.crack{position:fixed;width:160px;height:120px;z-index:32;pointer-events:none;transition:opacity .6s,filter .6s}
+.crack svg{width:100%;height:100%;filter:drop-shadow(1px 1px 0 rgba(255,255,255,.6))}
+.crack i{position:absolute;left:40%;top:45%;width:9px;height:7px;background:#E6DCC8;border:1px solid #BBAF96;animation:flake 2.2s ease-in infinite}
+.crack i:nth-of-type(2){left:62%;animation-delay:.7s}.crack i:nth-of-type(3){left:25%;animation-delay:1.4s}
+@keyframes flake{from{transform:translate(0,0) rotate(0);opacity:1}to{transform:translate(20px,140px) rotate(260deg);opacity:0}}
+.crack.fixed{opacity:0;filter:blur(4px)}
+#jbox{margin:-33px 0 0 -33px}
+@media (prefers-reduced-motion:reduce){.blobs i,.lamp,.spider svg{animation:none}}
+
+/* ---------- intro splash ---------- */
+#splash{position:fixed;inset:0;z-index:100;display:grid;place-content:center;justify-items:center;gap:2vh;background:radial-gradient(800px 500px at 50% 40%,#2F66E8,#0A2E7A 70%);cursor:pointer;transition:opacity .6s ease,transform .6s ease;padding:0 16px}
+#splash.out{opacity:0;transform:scale(1.06);pointer-events:none}
+.sp-word{font-family:var(--f-display);font-weight:900;font-size:clamp(5rem,20vw,13rem);line-height:.9;color:#fff;letter-spacing:.02em;opacity:0;filter:blur(14px);transform:translateY(18px);animation:spword .8s .15s cubic-bezier(.2,.8,.2,1) forwards;text-shadow:0 10px 0 rgba(0,0,0,.18)}
+@keyframes spword{to{opacity:1;filter:blur(0);transform:none}}
+.sp-cast{display:flex;align-items:flex-end;justify-content:center;gap:1vw;height:clamp(120px,26vh,240px)}
+.sp-cast img{height:100%;width:auto;max-width:19vw;object-fit:contain;opacity:0;transform:translateY(40px) scale(.7);animation:sppop .5s cubic-bezier(.3,1.6,.5,1) forwards;animation-delay:calc(.75s + var(--d)*.1s);filter:drop-shadow(0 12px 12px rgba(0,0,0,.35))}
+.sp-cast img.lead{height:115%;max-width:24vw}
+@keyframes sppop{to{opacity:1;transform:none}}
+.sp-tag{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#C9DAFF;opacity:0;animation:spword .5s 1.4s forwards}
+@media (prefers-reduced-motion:reduce){.sp-word,.sp-cast img,.sp-tag{animation:none;opacity:1;filter:none;transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;animation-iteration-count:1!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 
+<div id="splash" role="presentation" aria-hidden="true">
+  <div class="sp-word">U-Do</div>
+  <div class="sp-cast">
+    <img src="chars/plumber.webp" alt="" style="--d:0">
+    <img src="chars/electrician.webp" alt="" style="--d:1">
+    <img class="lead" src="chars/agent.webp" alt="" style="--d:2">
+    <img src="chars/cleaner.webp" alt="" style="--d:3">
+    <img src="chars/painter.webp" alt="" style="--d:4">
+  </div>
+  <p class="sp-tag">Your local job bridge</p>
+</div>
+<script>(()=>{const s=document.getElementById('splash');let r=false;try{r=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+const go=()=>{if(!s||s.classList.contains('out'))return;s.classList.add('out');setTimeout(()=>s.remove(),700)};
+s.addEventListener('click',go);setTimeout(go,r?300:2400)})();</script>
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#hero" aria-label="U-Do home">U-Do</a>
@@ -458,6 +579,7 @@ input,select,textarea{font-size:1rem}
     </nav>
     <div class="spacer"></div>
     <button class="btn sm ghost signin" id="signinBtn">Sign in</button>
+    <span class="score" id="score" title="Jobs fixed">Fixed <b>0</b></span>
     <button class="clean" id="cleanBtn" aria-label="Call a pro from the U-Do desk">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19q0 3-5 3"/></svg>
       Call a pro <span class="meter" aria-hidden="true"><i id="meter"></i></span><span class="badge" aria-hidden="true"></span>
@@ -469,6 +591,7 @@ input,select,textarea{font-size:1rem}
 
 <main>
   <section id="hero" data-say="">
+    <div class="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Local job bridge · UAE</p>
@@ -650,6 +773,8 @@ input,select,textarea{font-size:1rem}
 </main>
 
 <div id="pipe" aria-hidden="true"></div>
+<div id="tpipe" aria-hidden="true"></div>
+<div id="tjoint" aria-hidden="true"><span class="drip"><i></i><i style="animation-delay:.33s"></i><i style="animation-delay:.66s"></i></span></div>
 <div id="joint" aria-hidden="true"><span class="spray">
   <i style="--dx:-70px;--dy:30px"></i><i style="--dx:-90px;--dy:60px;animation-delay:.1s"></i><i style="--dx:-55px;--dy:80px;animation-delay:.2s"></i><i style="--dx:-110px;--dy:40px;animation-delay:.3s"></i>
   <i style="--dx:-80px;--dy:100px;animation-delay:.4s"></i><i style="--dx:-40px;--dy:50px;animation-delay:.5s"></i><i style="--dx:-100px;--dy:90px;animation-delay:.6s"></i><i style="--dx:-65px;--dy:120px;animation-delay:.35s"></i>
@@ -659,6 +784,7 @@ input,select,textarea{font-size:1rem}
   <span class="b" style="left:12%"></span><span class="b" style="left:37%;animation-delay:1.1s"></span><span class="b" style="left:63%;animation-delay:.5s"></span><span class="b" style="left:84%;animation-delay:2s"></span>
 </div>
 <div id="flicker" aria-hidden="true"></div>
+<div id="dark" aria-hidden="true"></div>
 <div id="flash" aria-hidden="true"></div>
 <div id="jbox" hidden aria-hidden="true">
   <svg viewBox="0 0 24 24" width="32" height="32"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="#F5B301" stroke="#7A5A00" stroke-width="1"/></svg>
@@ -766,6 +892,7 @@ function frame(t){const dt=Math.min(.05,(t-lastT)/1000);lastT=t;
 requestAnimationFrame(frame);
 window.UDO={
  dirt:()=>dirt, spots:()=>spots.slice(),
+ draw(fn){fn(sx)},addSpot(p){spots.push(p);if(spots.length>80)spots.shift()},bump(n){addDirt(n)},
  erase(x,y,r){sx.save();sx.globalCompositeOperation='destination-out';const g=sx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(.7,'rgba(0,0,0,.9)');g.addColorStop(1,'rgba(0,0,0,0)');sx.fillStyle=g;sx.beginPath();sx.arc(x,y,r,0,7);sx.fill();sx.restore()},
  cleanAll(){parts=[];spots.length=0;if(reduce){sx.clearRect(0,0,W,H);dirt=0;addDirt(0)}else{cleaning=performance.now();guide.classList.add('cheer')}return new Promise(r=>setTimeout(r,800))},
  say:(t,x,k)=>say(t,x,true,k)
@@ -935,22 +1062,26 @@ function renderWorker(){const s=status(),name=esc(S.user.name);
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const U=window.UDO,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const rand=(a,b)=>a+Math.random()*(b-a),pick=a=>a[Math.floor(Math.random()*a.length)];
+const PUNCH=['#FFC93C','#FF5D5D','#22C99A','#7B5CFF','#22B8F0','#1450D2'];
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 
-/* ---------- wall colours (blue & white family) ---------- */
+/* ---------- wall colours ---------- */
 const PALETTES={
  ice:{name:'Ice white',sw:'#F6F9FF',v:{}},
  sky:{name:'Sky blue',sw:'#DCEAFF',v:{'--paper':'#DCEAFF','--card':'#FFFFFF','--sky':'#C4DAFF','--line':'#A8C5F4','--ink':'#0B1B33','--muted':'#3E5276','--blue':'#1450D2','--blue-ink':'#FFFFFF'}},
+ lagoon:{name:'Lagoon',sw:'#C9EEFF',v:{'--paper':'#C9EEFF','--card':'#FFFFFF','--sky':'#A9E1FA','--line':'#86CCEB','--ink':'#062538','--muted':'#2F5568','--blue':'#0A6FB8','--blue-ink':'#FFFFFF'}},
+ mint:{name:'Mint',sw:'#D9F7EC',v:{'--paper':'#D9F7EC','--card':'#FFFFFF','--sky':'#BDEFDC','--line':'#95DCC2','--ink':'#082A20','--muted':'#335A4D','--blue':'#1450D2','--blue-ink':'#FFFFFF'}},
  aqua:{name:'Aqua',sw:'#D8F1F5',v:{'--paper':'#D8F1F5','--card':'#FFFFFF','--sky':'#BCE5EC','--line':'#9BD0DA','--ink':'#0B2433','--muted':'#3A5866','--blue':'#0B68A3','--blue-ink':'#FFFFFF'}},
  peri:{name:'Periwinkle',sw:'#E3E6FF',v:{'--paper':'#E3E6FF','--card':'#FFFFFF','--sky':'#CDD3FF','--line':'#B2BAF2','--ink':'#12163A','--muted':'#454B78','--blue':'#3A4ED6','--blue-ink':'#FFFFFF'}},
  steel:{name:'Steel',sw:'#E1E7EF',v:{'--paper':'#E1E7EF','--card':'#FFFFFF','--sky':'#CAD5E3','--line':'#AFBED2','--ink':'#0E1B2E','--muted':'#43536B','--blue':'#1E4F8F','--blue-ink':'#FFFFFF'}},
- navy:{name:'Navy night',sw:'#0A1A3A',dark:1,v:{'--paper':'#0A1A3A','--card':'#11284F','--sky':'#16315F','--line':'#24427C','--ink':'#EAF1FF','--muted':'#A9BBDD','--blue':'#5B8CFF','--blue-ink':'#04102A','--deep':'#A8C2FF'}}
+ navy:{name:'Navy night',sw:'#0A1A3A',dark:1,v:{'--paper':'#0A1A3A','--card':'#11284F','--sky':'#16315F','--line':'#24427C','--ink':'#EAF1FF','--muted':'#A9BBDD','--blue':'#5B8CFF','--blue-ink':'#04102A','--deep':'#A8C2FF'}},
+ violet:{name:'Electric violet',sw:'#2A1863',dark:1,v:{'--paper':'#1E1350','--card':'#2C1F6B','--sky':'#34267A','--line':'#4A3A9A','--ink':'#F1EDFF','--muted':'#BDB3E8','--blue':'#9C88FF','--blue-ink':'#14093A','--deep':'#C9BEFF'}}
 };
 const TOK=['--paper','--card','--sky','--line','--ink','--muted','--blue','--blue-ink','--deep'];
-let painted=false;
 function applyPalette(k){const p=PALETTES[k]||PALETTES.ice,b=document.body;TOK.forEach(t=>b.style.removeProperty(t));
- Object.entries(p.v).forEach(([t,v])=>b.style.setProperty(t,v));b.style.colorScheme=p.dark?'dark':(k==='ice'?'':'light');
- try{localStorage.setItem('udo-palette',k)}catch(e){}}
-try{const k=localStorage.getItem('udo-palette');if(k&&PALETTES[k]){applyPalette(k);painted=true}}catch(e){}
+ Object.entries(p.v).forEach(([t,v])=>b.style.setProperty(t,v));b.style.colorScheme=p.dark?'dark':(k==='ice'?'':'light');store.set('udo-palette',k)}
+{const k=store.get('udo-palette');if(k&&PALETTES[k])applyPalette(k)}
 
 /* ---------- the cast ---------- */
 const WRENCH='<svg class="fx wrench" viewBox="0 0 24 24" style="left:74%;top:30%"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z" fill="#D3DBE8" stroke="#56657E" stroke-width="1.2"/></svg>';
@@ -960,7 +1091,7 @@ const CREW={
  electrician:{name:'Sami',trade:'Electrician',img:'chars/electrician.webp',ar:1.672,tip:[.215,.2],fx:'<i class="fx glow" style="left:21.5%;top:20%"></i>'},
  painter:{name:'Rayan',trade:'Painter',img:'chars/painter.webp',ar:1.441,tip:[.145,.085],fx:''}
 };
-const GUIDE_NAME='Saeed';
+const GUIDE_NAME='Saeed',N=k=>CREW[k].name;
 Object.values(CREW).forEach(c=>{const i=new Image();i.src=c.img});
 
 /* ---------- moving the crew ---------- */
@@ -972,23 +1103,41 @@ function makeActor(k){const c=CREW[k],H=actorH(),el=document.createElement('div'
 const dims=el=>[parseFloat(el.style.width),parseFloat(el.style.height)];
 const tipOf=(k,w,h,flip)=>{const t=CREW[k].tip;return[w*(flip?1-t[0]:t[0]),h*t[1]]};
 const place=el=>el.style.transform=`translate(${el._x}px,${el._y}px)`;
+const floorY=h=>innerHeight-h-10;
 function walk(el,x,y,speed=240,onStep){return new Promise(res=>{const x0=el._x,y0=el._y,d=Math.hypot(x-x0,y-y0),dur=reduce?1:Math.max(250,d/speed*1000),t0=performance.now();
  el.classList.add('walking');if(Math.abs(x-x0)>4)el.classList.toggle('flip',x<x0);
  (function step(t){const k=Math.min(1,(t-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;el._x=x0+(x-x0)*e;el._y=y0+(y-y0)*e;place(el);onStep&&onStep(el._x,el._y);
   if(k<1)requestAnimationFrame(step);else{el.classList.remove('walking');res()}})(t0)})}
 async function work(el,ms,tick){el.classList.add('working');const t0=performance.now();while(performance.now()-t0<ms){tick&&tick();await sleep(60)}el.classList.remove('working')}
+function make(cls,html,parent=document.body){const d=document.createElement('div');d.className=cls;d.innerHTML=html||'';parent.appendChild(d);return d}
+function enter(k,side){const el=makeActor(k),[w,h]=dims(el);el._x=side==='left'?-w-10:innerWidth+20;el._y=floorY(h);place(el);return el}
+/* walk to the spot, set up a ladder if the job is high, and put the tool tip on (tx,ty) */
+async function reach(el,k,tx,ty){const[w,h]=dims(el),t=CREW[k].tip,ex=tx-w*t[0];let ey=ty-h*t[1];const fy=floorY(h);
+ await walk(el,ex,fy,240);el.classList.remove('flip');
+ if(ey>=fy-6){if(ey>fy){el._y=fy}return null}
+ const lad=make('ladder');lad.style.left=(ex+w*.27)+'px';lad.style.width=(w*.46)+'px';lad.style.top=(ey+h-6)+'px';lad.style.height=(innerHeight-(ey+h-6))+'px';
+ requestAnimationFrame(()=>lad.classList.add('up'));await sleep(reduce?0:420);
+ el.classList.add('climbing');await walk(el,ex,ey,150);el.classList.remove('climbing');return lad}
+async function leave(el,lad,side='right'){const[w,h]=dims(el);
+ if(lad){await walk(el,el._x,floorY(h),220);lad.classList.remove('up');setTimeout(()=>lad.remove(),400)}
+ await walk(el,side==='left'?-w-20:innerWidth+30,floorY(h),300);el.remove()}
+function area(){const wide=innerWidth>=1200;return{x0:wide?320:30,x1:innerWidth-90,y0:120,y1:innerHeight-130}}
+function confetti(x,y){if(reduce)return;for(let i=0;i<28;i++){const c=document.createElement('i');c.className='confetti';c.style.left=x+'px';c.style.top=y+'px';c.style.background=pick(PUNCH);
+ if(i%3===0)c.style.borderRadius='50%';document.body.appendChild(c);const a=rand(0,Math.PI*2),d=rand(60,190);
+ c.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d-60}px) rotate(${rand(-400,400)}deg)`,opacity:1,offset:.7},{transform:`translate(${Math.cos(a)*d*1.1}px,${Math.sin(a)*d+90}px) rotate(${rand(-600,600)}deg)`,opacity:0}],{duration:rand(900,1400),easing:'cubic-bezier(.2,.8,.3,1)'}).onfinish=()=>c.remove()}}
+function flash(){const f=$('#flash');f.classList.remove('go');void f.offsetWidth;f.classList.add('go')}
 
-/* ---------- scene pieces ---------- */
-const joint=$('#joint'),waterEl=$('#water'),jbox=$('#jbox'),paint=$('#paint'),picker=$('#picker'),btn=$('#cleanBtn'),guideEl=$('#guide');
-const jointY=()=>innerHeight-10-actorH()*(1-CREW.plumber.tip[1]);
-function placeJoint(){joint.style.top=(jointY()-11)+'px'}placeJoint();addEventListener('resize',placeJoint);
-const water={level:0,target:0,up:14,down:150};
+/* ---------- pipes and water ---------- */
+const joint=$('#joint'),tjoint=$('#tjoint'),waterEl=$('#water'),jbox=$('#jbox'),paint=$('#paint'),picker=$('#picker'),btn=$('#cleanBtn'),guideEl=$('#guide');
+const water={level:0,target:0,up:16,down:160};
 const pushEls=[$('main'),$('footer')];let lastW=-1,lt=performance.now();
 (function wl(t){const dt=Math.min(.05,(t-lt)/1000);lt=t;
  if(water.level<water.target)water.level=Math.min(water.target,water.level+water.up*dt);
  else if(water.level>water.target)water.level=Math.max(water.target,water.level-water.down*dt);
  if(Math.abs(water.level-lastW)>.3){lastW=water.level;waterEl.style.height=water.level+'px';const p=water.level*.55;pushEls.forEach(e=>e.style.transform=p>.5?`translateY(${p}px)`:'')}
  requestAnimationFrame(wl)})(lt);
+const flood=()=>water.target=Math.min(innerHeight*.42,380);
+addEventListener('pointermove',e=>{document.body.style.setProperty('--mx',e.clientX+'px');document.body.style.setProperty('--my',e.clientY+'px')},{passive:true});
 
 /* ---------- the guide, Saeed ---------- */
 $('#guideBody').innerHTML=`<div class="booth"><div class="booth-bg"></div><img src="chars/agent.webp" alt="${GUIDE_NAME}, the U-Do guide" draggable="false">
@@ -996,103 +1145,175 @@ $('#guideBody').innerHTML=`<div class="booth"><div class="booth-bg"></div><img s
  <span class="plate-name">${GUIDE_NAME} · U-Do guide</span></div>`;
 let tt;window.GUIDE={talk(ms){guideEl.classList.add('talking');clearTimeout(tt);tt=setTimeout(()=>guideEl.classList.remove('talking'),ms)}};
 const guideSay=(t,x,kind)=>U.say(t,x,kind);
-setTimeout(()=>guideSay(`Hi, I’m ${GUIDE_NAME}`,'Welcome to U-Do. Scroll down and I’ll walk you through it. Tap me any time to call a pro.',''),3800);
+setTimeout(()=>guideSay(`Hi, I’m ${GUIDE_NAME}`,'Welcome to U-Do. Things break around here a lot. When they do, tap me and send the right pro.',''),3800);
+
+/* ---------- score ---------- */
+const score={n:+(store.get('udo-fixed')||0),best:+(store.get('udo-best')||0)};
+function drawScore(pop){const el=$('#score');if(!el)return;el.querySelector('b').textContent=score.n;el.title=score.best?`Fastest response: ${score.best.toFixed(1)}s`:'Jobs fixed';if(pop){el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop')}}
+drawScore();
 
 /* ---------- picker ---------- */
+let paused=reduce||store.get('udo-paused')==='1';
 function setAlert(on){btn.classList.toggle('alert',on)}
 function closePicker(){picker.hidden=true}
 const pHead=(t,x)=>`<div class="p-head"><div><p class="eyebrow">${t}</p><p class="fine" style="margin-top:4px">${x}</p></div><button class="p-x" data-close aria-label="Close">×</button></div>`;
+const pFoot=()=>`<button class="p-pause" data-pause>${paused?'Turn surprises back on':'Pause surprises'}</button>`;
 function showCrew(){const need=active?INC[active.k].need:null;
  picker.innerHTML=pHead('Call a pro',need?`This job needs the ${CREW[need].trade.toLowerCase()}.`:'Call anyone, any time. If nothing is broken, they won’t be happy.')+
-  Object.entries(CREW).map(([k,c])=>`<button class="pick ${k===need?'need':''}" data-crew="${k}"><img src="${c.img}" alt=""><span><b>${c.name}</b><small>${c.trade}</small></span>${k===need?'<span class="need-tag">Needed</span>':''}</button>`).join('');
+  Object.entries(CREW).map(([k,c])=>`<button class="pick ${k===need?'need':''}" data-crew="${k}"><img src="${c.img}" alt=""><span><b>${c.name}</b><small>${c.trade}</small></span>${k===need?'<span class="need-tag">Needed</span>':''}</button>`).join('')+pFoot();
  picker.hidden=false}
-function showSwatches(){picker.innerHTML=pHead('Pick a wall colour',`${CREW.painter.name} will repaint the page in the colour you choose.`)+
+function showSwatches(){picker.innerHTML=pHead('Pick a wall colour',`${N('painter')} will repaint the page in the colour you choose.`)+
   `<div class="swatches">${Object.entries(PALETTES).map(([k,p])=>`<button class="sw" data-pal="${k}"><i style="background:${p.sw}"></i>${p.name}</button>`).join('')}</div>`;picker.hidden=false}
 function togglePicker(){if(!picker.hidden)return closePicker();if(busy){guideSay('Hold on','A pro is already working. One job at a time.','');return}showCrew()}
 btn.onclick=togglePicker;document.addEventListener('udo:guide',togglePicker);
 picker.addEventListener('click',e=>{const c=e.target.closest('[data-crew]'),p=e.target.closest('[data-pal]');
- if(e.target.closest('[data-close]'))closePicker();else if(c)dispatch(c.dataset.crew);else if(p)paintWith(p.dataset.pal)});
+ if(e.target.closest('[data-close]'))closePicker();
+ else if(e.target.closest('[data-pause]'))togglePause();
+ else if(c)dispatch(c.dataset.crew);else if(p)paintWith(p.dataset.pal)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePicker()});
+function togglePause(){paused=!paused;store.set('udo-paused',paused?'1':'0');closePicker();
+ if(paused){clearTimeout(timer);if(active&&!busy){INC[active.k].cleanup&&INC[active.k].cleanup();active=null;setAlert(false)}guideSay('Surprises paused','Nothing will break now. Tap me and choose “Turn surprises back on” any time.','')}
+ else{guideSay('Surprises are back','Keep an eye on the page. Something will break soon.','');scheduleNext(4000,8000)}}
+
+/* ---------- drawing mess on the page ---------- */
+const A=()=>area();
+function drawSmudge(x,y){U.draw(sx=>{const R=rand(45,90);for(let i=0;i<7;i++){const ox=x+(Math.random()-.5)*R,oy=y+(Math.random()-.5)*R*.6,r=R*(.3+Math.random()*.5);
+ const g=sx.createRadialGradient(ox,oy,0,ox,oy,r);g.addColorStop(0,'rgba(110,86,58,.12)');g.addColorStop(1,'rgba(110,86,58,0)');sx.fillStyle=g;sx.beginPath();sx.arc(ox,oy,r,0,7);sx.fill()}});U.addSpot({x,y,r:60})}
+function drawBoot(x,y){U.draw(sx=>{sx.save();sx.translate(x,y);sx.rotate(rand(0,7));sx.fillStyle='rgba(90,70,48,.22)';sx.beginPath();sx.ellipse(0,-10,11,17,0,0,7);sx.fill();sx.beginPath();sx.ellipse(0,18,9,9,0,0,7);sx.fill();sx.restore()});U.addSpot({x,y,r:30})}
+function drawCoffee(x,y){U.draw(sx=>{const r=rand(28,46);sx.strokeStyle='rgba(120,70,30,.45)';sx.lineWidth=rand(4,8);sx.beginPath();sx.arc(x,y,r,rand(0,1),rand(5,6.2));sx.stroke();
+ sx.fillStyle='rgba(140,85,40,.18)';sx.beginPath();sx.arc(x,y,r-3,0,7);sx.fill();
+ for(let i=0;i<9;i++){const a=rand(0,7),d=rand(r+6,r+40);sx.fillStyle='rgba(120,70,30,.4)';sx.beginPath();sx.arc(x+Math.cos(a)*d,y+Math.sin(a)*d,rand(2,6),0,7);sx.fill()}});U.addSpot({x,y,r:70})}
+function drawGraffiti(x,y){U.draw(sx=>{sx.save();sx.translate(x,y);sx.rotate(rand(-.35,.35));sx.lineCap='round';sx.lineJoin='round';
+ const c=pick(PUNCH.slice(0,5));sx.strokeStyle=c;sx.lineWidth=rand(6,10);sx.globalAlpha=.85;sx.beginPath();sx.moveTo(-90,10);
+ for(let i=0;i<6;i++)sx.quadraticCurveTo(-75+i*30,rand(-45,45),-60+i*30,rand(-25,25));sx.stroke();
+ sx.font='900 44px "Big Shoulders Display",Impact,sans-serif';sx.fillStyle=pick(PUNCH);sx.strokeStyle='#0B1B33';sx.lineWidth=3;sx.globalAlpha=.9;
+ const w=pick(['WOW!','U-DO!','OOPS','ZAP!','BOOM']);sx.strokeText(w,-50,-30);sx.fillText(w,-50,-30);sx.restore()});U.addSpot({x,y,r:95})}
+function drawWeb(x,y,flipX,flipY){U.draw(sx=>{sx.save();sx.translate(x,y);sx.scale(flipX?-1:1,flipY?-1:1);sx.strokeStyle='rgba(120,130,150,.55)';sx.lineWidth=1.4;const R=130;
+ for(let i=0;i<=6;i++){const a=i/6*Math.PI/2;sx.beginPath();sx.moveTo(0,0);sx.lineTo(Math.cos(a)*R,Math.sin(a)*R);sx.stroke()}
+ for(let r=22;r<R;r+=22){sx.beginPath();for(let i=0;i<=6;i++){const a=i/6*Math.PI/2,px=Math.cos(a)*r,py=Math.sin(a)*r;i?sx.quadraticCurveTo(Math.cos(a-.13)*(r-6),Math.sin(a-.13)*(r-6),px,py):sx.moveTo(px,py)}sx.stroke()}sx.restore()});
+ U.addSpot({x:x+(flipX?-55:55),y:y+(flipY?-55:55),r:90})}
 
 /* ---------- incidents ---------- */
-const N=k=>CREW[k].name;
+let mess=[];const clearMess=()=>{mess.forEach(m=>m.remove());mess=[]};
+async function cleanerRoute(){const el=enter('cleaner','left'),[w,h]=dims(el);
+ const brushAt=()=>{const[bx,by]=tipOf('cleaner',w,h,el.classList.contains('flip'));U.erase(el._x+bx,el._y+by,40)};
+ let sp=U.spots().filter(s=>s.x>-20&&s.x<innerWidth+20&&s.y>-20&&s.y<innerHeight+20);const route=[];let cx=0,cy=innerHeight;
+ while(sp.length&&route.length<8){sp.sort((a,b)=>Math.hypot(a.x-cx,a.y-cy)-Math.hypot(b.x-cx,b.y-cy));const s=sp.shift();route.push(s);cx=s.x;cy=s.y}
+ for(const s of route){const right=s.x>el._x+w/2,[bx,by]=tipOf('cleaner',w,h,!right);
+  const tx=Math.max(-w*.3,Math.min(innerWidth-w*.7,s.x-bx)),ty=Math.max(70,Math.min(innerHeight-h,s.y-by));
+  await walk(el,tx,ty,460,brushAt);await work(el,480,()=>{brushAt();U.erase(s.x,s.y,s.r+26)})}
+ const spider=mess.find(m=>m.classList.contains('spider'));if(spider){spider.classList.add('flee');await sleep(600)}
+ clearMess();await U.cleanAll();confetti(el._x+w/2,el._y+h*.4);await leave(el,null)}
+async function painterOverCracks(){const el=enter('painter','left'),[w,h]=dims(el);
+ for(const c of mess){const r=c.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,[bx,by]=tipOf('painter',w,h,false);
+  await walk(el,cx-bx,Math.max(70,Math.min(innerHeight-h,cy-by)),360);el.classList.remove('flip');await work(el,600);c.classList.add('fixed');confetti(cx,cy)}
+ await sleep(400);clearMess();await leave(el,null)}
 const INC={
- leak:{need:'plumber',msg:['Pipe burst!','Water is filling the page. Tap me and choose the Plumber.'],done:['Leak fixed',`${N('plumber')} tightened the joint. The water is draining away.`],
-  start(){joint.classList.remove('fixed');joint.classList.add('leaking');water.target=Math.min(innerHeight*.42,380)},
-  async fix(){const el=makeActor('plumber'),[w,h]=dims(el);el._x=innerWidth+20;el._y=innerHeight-h-10;place(el);
-   const r=joint.getBoundingClientRect();await walk(el,r.left+6-w*CREW.plumber.tip[0],innerHeight-h-10,230);el.classList.remove('flip');
-   await work(el,2000);joint.classList.remove('leaking');joint.classList.add('fixed');water.target=0;
-   await sleep(500);await walk(el,innerWidth+30,innerHeight-h-10,260);el.remove()}},
- dirt:{need:'cleaner',msg:['Messy page','Those dusty boots left marks everywhere. Tap me and choose the Cleaner.'],done:['Spotless',`${N('cleaner')} swept every spot. Shiny again.`],
-  async fix(){const el=makeActor('cleaner'),[w,h]=dims(el);el._x=-w-10;el._y=innerHeight-h-10;place(el);
-   const brushAt=()=>{const[bx,by]=tipOf('cleaner',w,h,el.classList.contains('flip'));U.erase(el._x+bx,el._y+by,36)};
-   let sp=U.spots().filter(s=>s.x>-20&&s.x<innerWidth+20&&s.y>-20&&s.y<innerHeight+20);const route=[];let cx=0,cy=innerHeight;
-   while(sp.length&&route.length<7){sp.sort((a,b)=>Math.hypot(a.x-cx,a.y-cy)-Math.hypot(b.x-cx,b.y-cy));const s=sp.shift();route.push(s);cx=s.x;cy=s.y}
-   for(const s of route){const right=s.x>el._x+w/2,[bx,by]=tipOf('cleaner',w,h,!right);
-    const tx=Math.max(-w*.3,Math.min(innerWidth-w*.7,s.x-bx)),ty=Math.max(70,Math.min(innerHeight-h,s.y-by));
-    await walk(el,tx,ty,420,brushAt);await work(el,520,()=>{brushAt();U.erase(s.x,s.y,s.r+24)})}
-   await U.cleanAll();await walk(el,innerWidth+30,innerHeight-h-10,380);el.remove()}},
- power:{need:'electrician',msg:['Power fault!','The lights are flickering. Tap me and choose the Electrician.'],done:['Lights on',`${N('electrician')} fixed the faulty junction box.`],
-  start(){jbox.classList.remove('fixed');jbox.hidden=false;document.body.classList.add('power-out')},
-  async fix(){const el=makeActor('electrician'),[w,h]=dims(el),[tx,ty]=tipOf('electrician',w,h,false);el._x=-w-10;el._y=innerHeight-h-10;place(el);
-   const r=jbox.getBoundingClientRect();await walk(el,r.left+r.width/2-tx,r.top+r.height/2-ty,240);el.classList.remove('flip');await work(el,2100);
-   jbox.classList.add('fixed');document.body.classList.remove('power-out');const f=$('#flash');f.classList.remove('go');void f.offsetWidth;f.classList.add('go');
-   await sleep(800);jbox.hidden=true;await walk(el,innerWidth+30,innerHeight-h-10,280);el.remove()}},
- paint:{need:'painter',msg:['Dull walls','This part of the page looks tired. Tap me, choose the Painter and pick a colour.'],done:['Fresh coat',`${N('painter')} painted the walls. Call him again any time for a new colour.`],
+ leakPipe:{need:'plumber',msgs:[['Pipe burst!','The side pipe is spraying water. Tap me and choose the Plumber.'],['Leak alert!','Water everywhere! Get the Plumber up here.']],done:['Leak fixed',`${N('plumber')} sealed the joint. Water draining.`],
+  start(){joint.style.top=(rand(innerHeight*.28,innerHeight-80)-11)+'px';joint.classList.remove('fixed');joint.classList.add('leaking');flood()},
+  async fix(){const el=enter('plumber','right'),r=joint.getBoundingClientRect(),tx=r.left+6,ty=r.top+11;const lad=await reach(el,'plumber',tx,ty);
+   await work(el,2000);joint.classList.remove('leaking');joint.classList.add('fixed');water.target=0;confetti(tx,ty);await sleep(400);await leave(el,lad)},
+  cleanup(){joint.classList.remove('leaking');water.target=0}},
+ leakCeiling:{need:'plumber',msgs:[['Ceiling drip!','The ceiling pipe is dripping all over the page. Call the Plumber.'],['Drip, drip, drip','A ceiling joint gave way. Tap me and choose the Plumber.']],done:['Dry again',`${N('plumber')} climbed up and sealed the ceiling pipe.`],
+  start(){const a=A();tjoint.style.left=rand(a.x0+60,a.x1-60)+'px';tjoint.classList.remove('fixed');tjoint.classList.add('leaking');flood()},
+  async fix(){const el=enter('plumber','right'),r=tjoint.getBoundingClientRect(),tx=r.left+r.width/2,ty=r.top+r.height/2+4;const lad=await reach(el,'plumber',tx,ty);
+   await work(el,2000);tjoint.classList.remove('leaking');water.target=0;confetti(tx,ty+20);await sleep(400);await leave(el,lad)},
+  cleanup(){tjoint.classList.remove('leaking');water.target=0}},
+ dust:{need:'cleaner',msgs:[['Messy page','Dusty boots tracked dirt everywhere. Tap me and choose the Cleaner.']],done:['Spotless',`${N('cleaner')} swept every spot.`],
+  start(o){if(!o||!o.fromScroll){const a=A();for(let i=0;i<4;i++)drawSmudge(rand(a.x0,a.x1),rand(a.y0,a.y1));for(let i=0;i<4;i++)drawBoot(rand(a.x0,a.x1),rand(a.y0,a.y1));U.bump(40)}},
+  fix:cleanerRoute,cleanup(){clearMess();U.cleanAll()}},
+ coffee:{need:'cleaner',msgs:[['Coffee spill!','Someone knocked over their karak. Tap me and choose the Cleaner.']],done:['All mopped up',`${N('cleaner')} cleaned the coffee stains.`],
+  start(){const a=A();for(let i=0;i<4;i++)drawCoffee(rand(a.x0,a.x1),rand(a.y0,a.y1));U.bump(30)},fix:cleanerRoute,cleanup(){U.cleanAll()}},
+ graffiti:{need:'cleaner',msgs:[['Graffiti!','Someone scribbled all over the page. Tap me and choose the Cleaner.']],done:['Wiped clean',`${N('cleaner')} scrubbed off the graffiti.`],
+  start(){const a=A();for(let i=0;i<3;i++)drawGraffiti(rand(a.x0+80,a.x1-60),rand(a.y0+40,a.y1));U.bump(30)},fix:cleanerRoute,cleanup(){U.cleanAll()}},
+ cobweb:{need:'cleaner',msgs:[['Cobwebs!','A spider moved in. Tap me and choose the Cleaner.']],done:['Web free',`${N('cleaner')} swept the webs and the spider ran off.`],
+  start(){const a=A(),top=a.y0-30;drawWeb(a.x0-10,top,false,false);drawWeb(a.x1+40,top,true,false);if(Math.random()<.6)drawWeb(a.x1+40,innerHeight-20,true,true);
+   const sp=make('spider','<i class="thread"></i><svg viewBox="0 0 40 40"><g stroke="#1B2130" stroke-width="2.4" stroke-linecap="round"><path d="M14 18L3 10M14 21L2 22M15 24L5 34M26 18l11-8M26 21l12 1M25 24l10 10"/></g><circle cx="20" cy="22" r="9" fill="#1B2130"/><circle cx="20" cy="12" r="6" fill="#1B2130"/><circle cx="17.5" cy="11" r="1.6" fill="#fff"/><circle cx="22.5" cy="11" r="1.6" fill="#fff"/></svg>');
+   sp.style.left=rand(a.x0+40,a.x1-40)+'px';sp.style.setProperty('--len',rand(110,260)+'px');mess.push(sp);U.bump(25)},
+  fix:cleanerRoute,cleanup(){clearMess();U.cleanAll()}},
+ junction:{need:'electrician',msgs:[['Power fault!','The lights are flickering. Tap me and choose the Electrician.']],done:['Lights on',`${N('electrician')} fixed the junction box.`],
+  start(){const a=A();jbox.style.left=rand(a.x0+40,a.x1-80)+'px';jbox.style.top=rand(a.y0+40,a.y1-40)+'px';jbox.classList.remove('fixed');jbox.hidden=false;document.body.classList.add('power-out')},
+  async fix(){const el=enter('electrician','left'),r=jbox.getBoundingClientRect();const lad=await reach(el,'electrician',r.left+r.width/2,r.top+r.height/2);
+   await work(el,2000);jbox.classList.add('fixed');document.body.classList.remove('power-out');flash();confetti(r.left+r.width/2,r.top);await sleep(700);jbox.hidden=true;await leave(el,lad)},
+  cleanup(){jbox.hidden=true;document.body.classList.remove('power-out')}},
+ blackout:{need:'electrician',msgs:[['Blackout!','The bulb blew. Use your mouse as a torch, then tap me and choose the Electrician.'],['Lights out!','Total darkness. Find me with your torch and call the Electrician.']],done:['Let there be light',`${N('electrician')} fitted a brand new bulb.`],
+  start(){const a=A(),lp=make('lamp','<i class="cord"></i><span class="shade"></span><span class="bulb"></span>');lp.style.left=rand(a.x0+60,a.x1-60)+'px';lp.style.setProperty('--len',rand(70,170)+'px');mess.push(lp);
+   document.body.style.setProperty('--mx',innerWidth/2+'px');document.body.style.setProperty('--my',innerHeight/2+'px');document.body.classList.add('blackout')},
+  async fix(){const lp=mess[0],b=lp.querySelector('.bulb').getBoundingClientRect(),el=enter('electrician','left');lp.classList.add('still');
+   const lad=await reach(el,'electrician',b.left+b.width/2,b.top+b.height/2);await work(el,1800);
+   lp.classList.add('on');document.body.classList.remove('blackout');flash();confetti(b.left,b.top);await sleep(900);await leave(el,lad);lp.classList.add('gone');await sleep(500);clearMess()},
+  cleanup(){document.body.classList.remove('blackout');clearMess()}},
+ socket:{need:'electrician',msgs:[['Sparking socket!','A socket is shorting and the page is buzzing. Tap me and choose the Electrician.']],done:['Safe again',`${N('electrician')} replaced the faulty socket.`],
+  start(){const a=A(),s=make('socket','<span class="holes"></span><span class="sparks"><i style="--r:-60deg"></i><i style="--r:-20deg;animation-delay:.12s"></i><i style="--r:20deg;animation-delay:.3s"></i><i style="--r:60deg;animation-delay:.2s"></i></span><span class="smoke"><i></i><i></i><i></i></span>');
+   s.style.left=rand(a.x0+40,a.x1-60)+'px';s.style.top=rand(innerHeight*.35,a.y1)+'px';mess.push(s);document.body.classList.add('buzz')},
+  async fix(){const s=mess[0],r=s.getBoundingClientRect(),el=enter('electrician','left');const lad=await reach(el,'electrician',r.left+r.width/2,r.top+r.height/2);
+   await work(el,1800);s.classList.add('fixed');document.body.classList.remove('buzz');confetti(r.left+r.width/2,r.top);await sleep(700);await leave(el,lad);clearMess()},
+  cleanup(){document.body.classList.remove('buzz');clearMess()}},
+ dull:{need:'painter',pickColour:1,msgs:[['Dull walls','The page lost its colour. Tap me, choose the Painter and pick a new colour.']],done:['Fresh coat',`${N('painter')} gave the walls a new colour.`],
   start(){document.body.classList.add('dull')},
-  async fix(k='sky'){const p=PALETTES[k],el=makeActor('painter'),[w,h]=dims(el),[tx]=tipOf('painter',w,h,false),y=Math.max(80,innerHeight*.5-h*.5);
-   el._x=-w-10;el._y=y;place(el);
-   await walk(el,-w*.4,y,300);paint.style.background=`repeating-linear-gradient(90deg,${p.sw} 0 38px,color-mix(in srgb,${p.sw} 90%,#000) 38px 44px)`;paint.style.width='0px';paint.hidden=false;
-   el.classList.add('painting');
-   await walk(el,innerWidth-w*.5,y,reduce?9e9:250,x=>paint.style.width=(x+tx+14)+'px');
-   el.classList.remove('painting');paint.style.width='100%';applyPalette(k);document.body.classList.remove('dull');painted=true;
-   await sleep(150);paint.classList.add('fade');await sleep(650);paint.hidden=true;paint.classList.remove('fade');
-   await walk(el,innerWidth+30,y,300);el.remove()}}
+  async fix(k='sky'){const p=PALETTES[k],el=enter('painter','left'),[w,h]=dims(el),[tx]=tipOf('painter',w,h,false),y=Math.max(80,innerHeight*.5-h*.5);
+   el._y=y;place(el);await walk(el,-w*.4,y,300);
+   paint.style.background=`repeating-linear-gradient(90deg,${p.sw} 0 38px,color-mix(in srgb,${p.sw} 90%,#000) 38px 44px)`;paint.style.width='0px';paint.hidden=false;
+   el.classList.add('painting');await walk(el,innerWidth-w*.5,y,reduce?9e9:260,x=>paint.style.width=(x+tx+14)+'px');el.classList.remove('painting');
+   paint.style.width='100%';applyPalette(k);document.body.classList.remove('dull');confetti(innerWidth/2,innerHeight/2);
+   await sleep(150);paint.classList.add('fade');await sleep(650);paint.hidden=true;paint.classList.remove('fade');await walk(el,innerWidth+30,y,300);el.remove()},
+  cleanup(){document.body.classList.remove('dull')}},
+ cracks:{need:'painter',msgs:[['Cracked walls!','The plaster is cracking and paint is flaking off. Tap me and choose the Painter.']],done:['Good as new',`${N('painter')} patched and painted every crack.`],
+  start(){const a=A();for(let i=0;i<4;i++){const c=make('crack',`<svg viewBox="0 0 160 120"><path d="M8 ${rand(30,90)|0} L40 ${rand(40,80)|0} L58 ${rand(20,60)|0} L80 ${rand(50,90)|0} L104 ${rand(30,70)|0} L120 ${rand(60,100)|0} L152 ${rand(40,80)|0} M58 40 L66 12 M104 50 L112 104" fill="none" stroke="#2B2B33" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><i></i><i></i><i></i>`);
+   c.style.left=rand(a.x0,a.x1-160)+'px';c.style.top=rand(a.y0,a.y1)+'px';c.style.transform=`rotate(${rand(-30,30)}deg)`;mess.push(c)}},
+  fix:painterOverCracks,cleanup(){clearMess()}}
 };
-let active=null,busy=false,queue=[],done=new Set(),dirtCalls=0;
-function start(k){active={k};INC[k].start&&INC[k].start();setAlert(true);closePicker();guideSay(...INC[k].msg,'alert')}
-function trigger(k){if(done.has(k)||(active&&active.k===k)||queue.includes(k))return;
- if(!$('#app').hidden){setTimeout(()=>trigger(k),2500);return}
- if(active||busy){queue.push(k);return}start(k)}
-function next(){if(active||busy)return;const k=queue.shift();if(k)start(k)}
-async function runFix(inc,arg){busy=true;const c=CREW[inc.need];guideSay('On the way',`${c.name} the ${c.trade.toLowerCase()} is coming now.`,'');
- await inc.fix(arg);if(active.k!=='dirt')done.add(active.k);guideSay(...inc.done,'');setAlert(false);active=null;busy=false;
- if(queue.length){await sleep(2600);next()}}
+const POOL=['leakPipe','leakCeiling','dust','coffee','graffiti','cobweb','junction','blackout','socket','dull','cracks'];
+
+let active=null,busy=false,timer=null,last=null,nag=0;
+function start(k,o){active={k,t0:performance.now()};nag=0;const inc=INC[k];inc.start&&inc.start(o);setAlert(true);closePicker();guideSay(...pick(inc.msgs),'alert')}
+function scheduleNext(a=8000,b=15000){clearTimeout(timer);if(paused)return;timer=setTimeout(fire,rand(a,b))}
+function fire(){if(paused)return;if(active||busy||!$('#app').hidden||!picker.hidden||document.hidden)return scheduleNext(2500,4500);
+ let k;do{k=pick(POOL)}while(k===last);last=k;start(k)}
+async function finish(inc){const secs=(performance.now()-active.t0)/1000;score.n++;if(!score.best||secs<score.best)score.best=secs;
+ store.set('udo-fixed',score.n);store.set('udo-best',score.best.toFixed(1));drawScore(true);
+ guideSay(inc.done[0],`${inc.done[1]} Done in ${secs.toFixed(0)}s.`,'');setAlert(false);active=null;busy=false;scheduleNext()}
+async function runFix(inc,arg){busy=true;const c=CREW[inc.need];guideSay('On the way',`${c.name} the ${c.trade.toLowerCase()} is coming now.`,'');await inc.fix(arg);await finish(inc)}
 async function dispatch(k){if(busy)return;
- if(k==='painter'&&((active&&active.k==='paint')||(!active&&painted)))return showSwatches();
- if(!active){if(k==='cleaner'&&U.dirt()>2)active={k:'dirt'};else return noIssue(k)}
+ if(!active){if(k==='painter')return showSwatches();if(k==='cleaner'&&U.dirt()>2){active={k:'dust',t0:performance.now()}}else return noIssue(k)}
  const inc=INC[active.k];if(k!==inc.need)return noIssue(k,inc.need);
- closePicker();await runFix(inc)}
+ if(inc.pickColour)return showSwatches();closePicker();await runFix(inc)}
 async function paintWith(k){closePicker();if(busy)return;
- if(active&&active.k==='paint')return runFix(INC.paint,k);
- busy=true;guideSay('On the way',`${N('painter')} is coming to repaint the walls.`,'');await INC.paint.fix(k);guideSay('Fresh coat',`The walls are now ${PALETTES[k].name}.`,'');busy=false}
-async function noIssue(k,need){busy=true;closePicker();const c=CREW[k],el=makeActor(k),[w,h]=dims(el),gy=innerHeight-h-10;
- el._x=innerWidth+20;el._y=gy;place(el);
+ if(active&&INC[active.k].pickColour)return runFix(INC[active.k],k);
+ busy=true;guideSay('On the way',`${N('painter')} is coming to repaint the walls.`,'');await INC.dull.fix(k);guideSay('Fresh coat',`The walls are now ${PALETTES[k].name}.`,'');busy=false}
+async function noIssue(k,need){busy=true;closePicker();const c=CREW[k],el=enter(k,'right'),[w,h]=dims(el),gy=floorY(h);
  guideSay(`Calling ${c.name}`,`${c.name} the ${c.trade.toLowerCase()} is on the way.`,'');
- await walk(el,innerWidth*.55-w/2,gy,260);
- el.classList.add('confused');
+ await walk(el,innerWidth*.55-w/2,gy,260);el.classList.add('confused');
  guideSay('Hmm?',need?`${c.name} can’t fix this. It needs the ${CREW[need].trade.toLowerCase()}.`:`${c.name} came over, but there’s nothing to fix.`,'');
  await sleep(700);el.classList.toggle('flip');await sleep(600);el.classList.toggle('flip');await sleep(700);
  el.classList.remove('confused');el.classList.add('upset');
  guideSay(need?'Wrong pro':'Nothing to fix',need?`${c.name} left grumbling. Tap me and choose the ${CREW[need].trade}.`:`${c.name} went back upset. Call a pro when something breaks.`,'');
  await sleep(500);await walk(el,innerWidth+30,gy,460);el.remove();busy=false;
- if(active){await sleep(900);if(active&&!busy)guideSay(...INC[active.k].msg,'alert')}else next()}
+ if(active){await sleep(900);if(active&&!busy)guideSay(...pick(INC[active.k].msgs),'alert')}}
 
-if(!reduce){
- const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const k=en.target.dataset.inc;setTimeout(()=>trigger(k),700)}),{rootMargin:'-35% 0px -35% 0px'});
- [['#what','leak'],['#pricing','power'],['#safety','paint']].forEach(([s,k])=>{const el=$(s);el.dataset.inc=k;io.observe(el)});
-}
-document.addEventListener('udo:dirt',e=>{const lim=dirtCalls?70:42;if(dirtCalls<2&&e.detail>lim&&!(active&&active.k==='dirt')&&!queue.includes('dirt')){dirtCalls++;trigger('dirt')}});
+/* waiting timer + nagging */
+setInterval(()=>{const hint=$('#bubble .hint');if(!hint)return;
+ if(active&&!busy){const s=(performance.now()-active.t0)/1000|0;hint.textContent=`Waiting ${s}s · tap me to call a pro`;
+  if(s>=22&&nag===0){nag=1;guideSay('Still waiting!',`It’s been ${s} seconds. Tap me and choose the ${CREW[INC[active.k].need].trade}.`,'alert')}
+  else if(s>=45&&nag===1){nag=2;guideSay('Getting worse!','Customers are watching. Tap me and send a pro!','alert')}}
+ else hint.textContent='Tap me to call a pro'},1000);
+
+/* scroll dirt can start a cleaning job too */
+document.addEventListener('udo:dirt',e=>{if(!paused&&e.detail>45&&!active&&!busy&&picker.hidden&&$('#app').hidden){clearTimeout(timer);start('dust',{fromScroll:1})}});
+
+/* begin once the visitor starts exploring */
+let begun=false;const begin=()=>{if(begun||paused)return;begun=true;scheduleNext(4000,7000)};
+addEventListener('scroll',()=>{if(scrollY>innerHeight*.5)begin()},{passive:true});setTimeout(begin,14000);
 
 /* ---------- finale line-up ---------- */
 const host=$('#stage3d');
 host.innerHTML=`<div class="lineup"><div class="podium"><img src="chars/agent.webp" alt="${GUIDE_NAME}, the U-Do guide"><span class="plate-name">${GUIDE_NAME} · U-Do guide</span></div>
  <div class="row">${['plumber','cleaner','electrician','painter'].map((k,i)=>`<figure class="pose" style="--i:${i};--ar:${CREW[k].ar}"><img src="${CREW[k].img}" alt="${CREW[k].name} the ${CREW[k].trade.toLowerCase()}"></figure>`).join('')}</div></div>`;
 const lineup=host.querySelector('.lineup');
-new IntersectionObserver(es=>{if(es[0].isIntersecting)lineup.classList.add('in')},{threshold:.25}).observe(host);
+new IntersectionObserver(es=>{if(es[0].isIntersecting&&!lineup.classList.contains('in')){lineup.classList.add('in');const r=host.getBoundingClientRect();setTimeout(()=>confetti(r.left+r.width/2,r.top+r.height*.3),900)}},{threshold:.25}).observe(host);
 host.addEventListener('pointermove',e=>{if(reduce)return;const r=host.getBoundingClientRect();lineup.style.setProperty('--ry',(((e.clientX-r.left)/r.width-.5)*14).toFixed(2)+'deg')});
 host.addEventListener('pointerleave',()=>lineup.style.setProperty('--ry','0deg'));
-host.addEventListener('click',e=>{const p=e.target.closest('.pose');if(!p)return;p.classList.remove('wave');void p.offsetWidth;p.classList.add('wave')});
+host.addEventListener('click',e=>{const p=e.target.closest('.pose');if(!p)return;p.classList.remove('wave');void p.offsetWidth;p.classList.add('wave');const r=p.getBoundingClientRect();confetti(r.left+r.width/2,r.top+20)});
 })();
 </script>
 
